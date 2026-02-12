@@ -1,17 +1,33 @@
 import { useState } from 'react';
 import Header from './components/Header';
-import OrderPage from './components/OrderPage';
-import Success from './components/Success';
-import index from './index.css';
-
+import OrderPage from './components/OrderPage/OrderHeader';
+import Success from './components/OrderPage/Success';
+import Cards from './components/Cards';
+import Icons from './components/Icons';
+import Footer from './components/Footer';     
 
 function App() {
+  const [activePage, setActivePage] = useState("home");
+  
   return(
-    <>
-    <Header />
-    <NavLinks />
-    <OrderPage />
-    <Success />
+<>
+      {activePage === "home" && (
+        <>
+          <Header setActivePage={setActivePage} />
+          <Icons />
+          <Cards />
+        </>
+      )}
+
+      {activePage === "order" && (
+        <OrderPage setActivePage={setActivePage} />
+      )}
+
+      {activePage === "success" && (
+        <Success />
+      )}
+
+      <Footer />
     </>
   )
 }

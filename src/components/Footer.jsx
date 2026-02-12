@@ -1,7 +1,9 @@
+import styled from "styled-components"; 
+
 function Footer() {
     return (
     
-<footer>
+<FooterSection  className="footer">
 <div className="last-section main-flex">
 
   <div className="iletisim">
@@ -52,8 +54,81 @@ Istanbul Türkiye</p>
     <p>© 2023 Teknolojik Yemekler. </p>
     <i className="fa-brands fa-twitter"></i>
     </div>
-</footer>
+</FooterSection >
+  
     )
 }
-
 export default Footer;
+
+const FooterSection = styled.footer`
+  footer{
+  background-color: #1A1A1A;
+}
+
+.last-section{
+  max-width: 60%;
+  margin: 0 auto;
+  padding: 30px 0;
+}
+
+.iletisim, .hot-menu, .instagram, .copyright p{
+  color: #FFFFFF;
+  font-family: Barlow;
+}
+
+.iletisim{
+  display: flex;
+  flex-direction: column;
+}
+
+.adres, .email, .telefon{
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  margin: 15px 0;
+}
+
+.adres{
+  line-height: 1.5rem;
+}
+
+.logo-footer{
+  width: 180px;
+  padding: 20px 0;
+  margin-bottom: 20px;
+}
+
+.iletisim p, .hot-menu p, .copyright p{
+  font-size: 0.9rem;
+  font-weight: 200;
+}
+
+.last-section h5{
+  font-size: 20px;
+  font-weight: 400;
+  margin-bottom: 20px;
+  margin-top: 100px;
+}
+
+.hot-menu {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.ig-grid{
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 10px;
+}
+
+footer hr {
+  border: 1px solid #333;
+}
+
+.copyright {
+  color: #FFFFFF;
+  padding: 30px 0;
+  margin: 0 auto;
+}
+`;
