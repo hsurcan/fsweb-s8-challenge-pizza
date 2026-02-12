@@ -1,27 +1,29 @@
-import styled from 'styled-components';
+function Header() {
 
-const HeaderContainer = styled.header`
-  background-color: #ce2829;
-  padding: 3rem 1rem;
-  text-align: center;
-`;
-
-const Nav = styled.nav`
-  color: white;
-  margin-top: 1rem;
-  font-size: 0.9rem;
-  span {
-    opacity: 0.8;
-  }
-`;
-
-export default function Header() {
   return (
-    <HeaderContainer>
-      <Title><img src="/images/logo.png" alt="Logo"/></Title>
-      <Nav>
-        <span>Anasayfa - Seçenekler - </span> <strong>Sipariş Oluştur</strong>
-      </Nav>
-    </HeaderContainer>
+<header>
+  <div className="banner-container">
+    <img className="logo" src="./public/assets/iteration-1/logo.svg"/>
+
+    <div className="banner-content">
+      <p>fırsatı kaçırma</p>
+      <h1>KOD ACIKTIRIR<br/>PIZZA, DOYURUR</h1>
+      <button className="btn radius" onClick={OrderPage}>ACIKTIM</button>
+    </div>
+  </div>
+  <nav id="navbar">
+    <div className="container nav-flex">
+      <div className="nav-item"><img src="./images/iteration-2/icons/1.svg"/><a href="#">YENİ! Kore</a></div>
+      <div className="nav-item"><img src="./images/iteration-2/icons/2.svg"/><a href="#">Pizza</a></div>
+      <div className="nav-item"><img src="./images/iteration-2/icons/3.svg"/><a href="#">Burger</a></div>
+      <div className="nav-item"><img src="./images/iteration-2/icons/4.svg"/><a href="#">Kızartmalar</a></div>
+      <div className="nav-item"><img src="./images/iteration-2/icons/5.svg"/><a href="#">Fast Food</a></div>
+      <div className="nav-item"><img src="./images/iteration-2/icons/6.svg"/><a href="#">İçecekler</a></div>
+    </div>
+  </nav>
+</header>
+
   );
 }
+
+export default Header;
