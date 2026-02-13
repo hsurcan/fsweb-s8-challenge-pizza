@@ -9,9 +9,9 @@ import Success from './components/OrderPage/Success';
 function App() {
 
   const [activePage, setActivePage] = useState("home");
-  const [orderData, setOrderData] = useState(null);
+  const [orderData, setOrderData] = useState(null); //sipariş sayfasından gelen veriyi tutmak için
 
-// Order formundan gelen veriyi al ve success'e gönder
+// Form'dan gelen formData verisini al ve success sayfasına gönder
   const handleOrderSuccess = (data) => {
     setOrderData(data);
     setActivePage("success");
