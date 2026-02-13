@@ -131,4 +131,12 @@ footer hr {
   padding: 30px 0;
   margin: 0 auto;
 }
+
+@media (max-width: 600px){
+
+  .last-section{
+    flex-wrap: wrap;
+  }
+
+};
 `;

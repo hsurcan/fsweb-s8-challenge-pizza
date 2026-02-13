@@ -131,6 +131,31 @@ const CardsSection = styled.main`
 .siparis-content3 span{
   color: #CE2829;
 }
+
+.radius{
+  border-radius: 50px;
+}
+
+@media (max-width: 600px){
+
+  .siparis-container{
+    flex-wrap: wrap;
+    margin: 50px auto;
+    min-width: 450px;
+  }
+
+  .siparis-card{
+    height: 330px;
+    margin-bottom: 10px;
+  }
+
+  .siparis-card2, .siparis-card3{
+    height: 270px;
+    width: 450px;
+    background-size: auto;
+    background-repeat: no-repeat;
+  }
+};
 `;
 
 export default Cards;

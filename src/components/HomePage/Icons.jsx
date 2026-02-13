@@ -86,8 +86,6 @@ margin-top: 50px;
   color: #292929;
 }
 
-/*ICONS*/
-
 .main-flex{ 
   display: flex; 
   justify-content: space-between; 
@@ -163,5 +161,30 @@ margin-top: 50px;
 .price-item span:first-child{
   font-size: 0.8rem;
   word-spacing: 6rem;
+
+.radius{
+  border-radius: 50px;
 }
+}
+
+@media (max-width: 600px){
+
+  .section-item{
+    align-items: center;
+    max-width: 60%;
+    margin: 0 auto;
+  }
+
+  .price-section{
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    margin: 20px auto;
+    min-width: 450px;
+  }
+
+  .price-card{
+    width: 100%;
+  }
+};
   `

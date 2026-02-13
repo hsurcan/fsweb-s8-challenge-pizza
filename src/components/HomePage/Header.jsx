@@ -7,7 +7,7 @@ function Header({ setActivePage }) {
     <HeaderWrapper> 
 <header>
   <div className="banner-container">
-    <img className="logo" src="./public/assets/iteration-1/logo.svg"/>
+    <img className="logo" src="./images/iteration-1/logo.svg"/>
 
     <div className="banner-content">
       <p>fırsatı kaçırma</p>
@@ -79,7 +79,6 @@ const HeaderWrapper = styled.div`
   padding: 15px 55px;
 }
 
-/*NAV*/
 .radius{
   border-radius: 50px;
 }
@@ -112,6 +111,18 @@ const HeaderWrapper = styled.div`
   color: black;
   text-decoration: none;
 }
+  @media (max-width: 600px){
+
+  .nav-flex{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    align-items: center;
+    height: fit-content;
+    max-width: 50%;
+    padding: 50px 0;
+    gap: 20px;
+  }
+};
 `;
  
 export default Header;
