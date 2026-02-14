@@ -1,5 +1,4 @@
-import React from 'react'
-import { SuccessPage } from './orderSuccess.style'
+import './Success.css'
 
 const pizzaPrice = 85.5
 const ingredientPrice = 5
@@ -9,19 +8,19 @@ const pizzaSize = {
   buyuk: 'Büyük' }
 
 
-function OrderSuccess({ orderData, onNavigateHome }) {
+export default function Success({ orderData }) {
   if (!orderData) { //eğer formdan veri gelmezse
     return null
   }
 
   //prop destructuring ile orderData içindeki bilgileri alıyoruz. Malzemeler ve miktar için varsayılan değerler atıyoruz.
-  const { boyut, hamur, malzemeler = [], miktar = 1 } = orderData
-  const boyutLabel = pizzaSize[boyut] ?? boyut
-  const selections = (malzemeler.length * ingredientPrice * miktar).toFixed(2)
-  const total = ((pizzaPrice + malzemeler.length * ingredientPrice) * miktar).toFixed(2)
+  const { size, thickness, ingredients = [], quantity = 1 } = orderData
+  const sizeLabel = pizzaSize[size] ?? size //boyut bilgisini daha okunabilir hale getiriyoruz. Eğer tanımlı değilse gelen değeri kullanıyoruz.
+  const selections = (ingredients.length * ingredientPrice * quantity).toFixed(2)
+  const total = ((pizzaPrice + ingredients.length * ingredientPrice) * quantity).toFixed(2)
 
   return (
-    <SuccessPage>
+    <div className='success-container'>
       <header>
         <img src="/images/iteration-1-images/logo.svg" alt="Teknolojik Yemekler" />
       </header>
@@ -31,9 +30,9 @@ function OrderSuccess({ orderData, onNavigateHome }) {
         <hr />
         <h2>Position Absolute Acı Pizza</h2>
         <div className="details">
-          <div><span>Boyut:</span><span className="value">{boyutLabel}</span></div>
-          <div><span>Hamur:</span><span className="value">{hamur}</span></div>
-          <div><span>Ek Malzemeler:</span><span className="value">{malzemeler.join(', ')}</span></div>
+          <div><span>Boyut:</span><span className="value">{sizeLabel}</span></div>
+          <div><span>Hamur:</span><span className="value">{thickness}</span></div>
+          <div><span>Ek Malzemeler:</span><span className="value">{ingredients.join(', ')}</span></div>
         </div>
         <div className="summary">
           <h3>Sipariş Toplamı</h3>
@@ -41,8 +40,8 @@ function OrderSuccess({ orderData, onNavigateHome }) {
           <div className="summary-row total-row"><span>Toplam</span><span>{total}₺</span></div>
         </div>
       </div>
-    </SuccessPage>
+    </div>
   )
 }
 
-export default OrderSuccess
+

@@ -1,46 +1,48 @@
-import { useState } from 'react';
-import Header from './components/HomePage/Header';
-import Cards from './components/HomePage/Cards';
-import Icons from './components/HomePage/Icons';
-import Footer from './components/HomePage/Footer';     
-import OrderHeader from './components/OrderPage/OrderHeader';
-import Success from './components/OrderPage/Success';
+import { useState } from 'react'
+import './App.css'
+import OrderForm from './components/OrderPage/OrderForm.jsx'
+import OrderHeader from './components/OrderPage/OrderHeader.jsx'
+import Success from './components/OrderPage/Success.jsx'
+import Footer from './components/HomePage/Footer.jsx'
+import HomePage from './HomePage.jsx'
 
-function App() {
+export default function App() {
+  const [currentPage, setCurrentPage] = useState('home')
+  const [orderResponse, setOrderResponse] = useState(null)
 
-  const [activePage, setActivePage] = useState("home");
-  const [orderData, setOrderData] = useState(null); //sipariş sayfasından gelen veriyi tutmak için
-
-// Form'dan gelen formData verisini al ve success sayfasına gönder
   const handleOrderSuccess = (data) => {
-    setOrderData(data);
-    setActivePage("success");
+    setOrderResponse(data)
+    setCurrentPage('success')
   }
 
   return (
-    <>
-      {activePage === "home" && (
+    <div className="app-main-layout">
+      {currentPage === 'home' && (
         <>
-          <Header setActivePage={setActivePage} />
-          <Icons />
-          <Cards />
+        <HomePage onAciktimClick={() => setCurrentPage('order')} />
         </>
       )}
-
-      {activePage === "order" && (
+      {currentPage === 'order' && (
         <>
-        <OrderHeader setActivePage={setActivePage} />
-        <OrderForm setActivePage={setActivePage} handleOrderSuccess={handleOrderSuccess} />
-        </>
-      )}
-
-      {activePage === "success" && (
-        <Success orderData={orderData} setActivePage={setActivePage} />
-      )}
-
-      <Footer />
+        <OrderHeader setCurrentPage={setCurrentPage} />
+        <OrderForm
+          onNavigateHome={() => setCurrentPage('home')}
+          onOrderSuccess={handleOrderSuccess}
+        />
     </>
-  );
+      )}
+      {currentPage === 'success' && (
+        <Success
+          orderData={orderResponse}
+          onNavigateHome={() => {
+            setCurrentPage('home')
+            setOrderResponse(null)
+          }}
+        />
+      )}
+    <Footer />
+    </div>
+  )
 }
 
-export default App;
+
