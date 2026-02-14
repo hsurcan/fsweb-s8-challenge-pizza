@@ -14,13 +14,13 @@ export default function Success({ orderData }) {
   }
 
   //prop destructuring ile orderData içindeki bilgileri alıyoruz. Malzemeler ve miktar için varsayılan değerler atıyoruz.
-  const { size, thickness, ingredients = [], quantity = 1 } = orderData
+  const { size, dough, ingredients = [], quantity = 1 } = orderData
   const sizeLabel = pizzaSize[size] ?? size //boyut bilgisini daha okunabilir hale getiriyoruz. Eğer tanımlı değilse gelen değeri kullanıyoruz.
   const selections = (ingredients.length * ingredientPrice * quantity).toFixed(2)
   const total = ((pizzaPrice + ingredients.length * ingredientPrice) * quantity).toFixed(2)
 
   return (
-    <div className='success-container'>
+    <div className='success-container'> 
       <header>
         <img src="/images/iteration-1-images/logo.svg" alt="Teknolojik Yemekler" />
       </header>
@@ -31,7 +31,7 @@ export default function Success({ orderData }) {
         <h2>Position Absolute Acı Pizza</h2>
         <div className="details">
           <div><span>Boyut:</span><span className="value">{sizeLabel}</span></div>
-          <div><span>Hamur:</span><span className="value">{thickness}</span></div>
+          <div><span>Hamur:</span><span className="value">{dough}</span></div>
           <div><span>Ek Malzemeler:</span><span className="value">{ingredients.join(', ')}</span></div>
         </div>
         <div className="summary">

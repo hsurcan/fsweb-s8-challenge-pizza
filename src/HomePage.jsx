@@ -23,7 +23,7 @@ export default function HomePage({onAciktimClick}) {
         <SectionContainer>
           <ul className="nav-list">
             {[
-              "Kore",
+              "YENİ! Kore",
               "Pizza",
               "Burger",
               "Kızartmalar",
@@ -313,6 +313,7 @@ const OffersWrapper = styled.section`
 // PRODUCT SECTION
 const ProductWrapper = styled.section`
   padding-bottom: 100px;
+
   .section-head {
     text-align: center;
     margin-bottom: 50px;
@@ -364,13 +365,14 @@ const ProductWrapper = styled.section`
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     gap: 30px;
+
     @media (max-width: 900px) {
       grid-template-columns: 1fr;
     }
   }
   .food-card {
     background: white;
-    padding: 25px;
+    padding: 15px;
     border-radius: 12px;
     img {
       width: 100%;
@@ -383,11 +385,11 @@ const ProductWrapper = styled.section`
     }
     .meta {
       display: flex;
-      justify-content: space-between;;
+      justify-content: space-between;
     }
     .rating{
     display: flex;
-    gap: 300px;
+    gap: 200px;
     font-weight: 500;
     }
     .price{

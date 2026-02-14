@@ -23,12 +23,11 @@ export default function App() {
 
       {currentPage === 'order' && (
         <>
-        <OrderHeader onNavigateHome={() => setCurrentPage('home')} /> 
-        <OrderForm
-          onNavigateHome={() => setCurrentPage('home')}
-          onOrderSuccess={handleOrderSuccess}
-        />
-       </>
+          <OrderHeader onNavigateHome={() => setCurrentPage('home')} />
+          <OrderForm
+            onNavigateHome={() => setCurrentPage('home')}
+            onOrderSuccess={handleOrderSuccess} />
+        </>
       )}
 
       {currentPage === 'success' && (
@@ -37,11 +36,11 @@ export default function App() {
           onNavigateHome={() => {
             setCurrentPage('home')
             setOrderResponse(null)
-          }}
-        />
+          } } />
       )}
-      <Footer />
-          </div>
+       <Footer />
+    </div>
+  
   )
 }
 

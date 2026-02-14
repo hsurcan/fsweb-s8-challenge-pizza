@@ -1,81 +1,6 @@
 import React from "react";
 import styled from "styled-components";
 
-const FooterSection = styled.footer`
-  background: #1a1a1a;
-  color: white;
-  padding-top: 80px;
-  width: 100%;
-  position: relative;
-
-  .footer-wrap {
-    display: flex;
-    justify-content: space-between;
-    padding-bottom: 60px;
-    flex-wrap: wrap;
-    gap: 40px;
-    max-width: 1068px;
-    margin: 0 auto;
-    padding-left: 15px;
-    padding-right: 15px;
-  }
-  .footer-info {
-    width: 300px;
-  }
-  .footer-logo img {
-    width: 250px;
-    margin-bottom: 40px;
-  }
-  .contact-list {
-    list-style: none;
-    .contact-item {
-      display: flex;
-      gap: 12px;
-      margin-bottom: 20px;
-      align-items: flex-start;
-      .contact-icon {
-        width: 20px;
-        margin-top: 4px;
-      }
-    }
-  }
-  .footer-head {
-    margin-bottom: 30px;
-    font-size: 20px;
-  }
-  .footer-list {
-    list-style: none;
-    .footer-link {
-      margin-bottom: 12px;
-      opacity: 0.8;
-      font-size: 16px;
-    }
-  }
-  .insta-grid {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 10px;
-    width: 280px;
-    .insta-item img {
-      width: 100%;
-      border-radius: 8px;
-    }
-  }
-  .footer-copy {
-    border-top: 1px solid #333;
-    padding: 30px 0;
-    .copy-content {
-      display: flex;
-      justify-content: space-between;
-      max-width: 1068px;
-      margin: 0 auto;
-      opacity: 0.8;
-      align-items: center;
-      padding: 0 15px;
-    }
-  }
-`;
-
 const Footer = () => {
   return (
         <FooterSection>
@@ -157,3 +82,78 @@ const Footer = () => {
 };
 
 export default Footer;
+
+const FooterSection = styled.footer`
+  background: #1a1a1a;
+  color: white;
+  padding-top: 80px;
+  width: 100%;
+  position: relative;
+
+  .footer-wrap {
+    display: flex;
+    justify-content: space-between;
+    padding-bottom: 60px;
+    flex-wrap: wrap;
+    gap: 40px;
+    max-width: 1068px;
+    margin: 0 auto;
+    padding-left: 15px;
+    padding-right: 15px;
+  }
+  .footer-info {
+    width: 300px;
+  }
+  .footer-logo img {
+    width: 250px;
+    margin-bottom: 40px;
+  }
+  .contact-list {
+    list-style: none;
+    .contact-item {
+      display: flex;
+      gap: 12px;
+      margin-bottom: 20px;
+      align-items: flex-start;
+      .contact-icon {
+        width: 20px;
+        margin-top: 4px;
+      }
+    }
+  }
+  .footer-head {
+    margin-bottom: 30px;
+    font-size: 20px;
+  }
+  .footer-list {
+    list-style: none;
+    .footer-link {
+      margin-bottom: 12px;
+      opacity: 0.8;
+      font-size: 16px;
+    }
+  }
+  .insta-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 10px;
+    width: 280px;
+    .insta-item img {
+      width: 100%;
+      border-radius: 8px;
+    }
+  }
+  .footer-copy {
+    border-top: 1px solid #333;
+    padding: 30px 0;
+    .copy-content {
+      display: flex;
+      justify-content: space-between;
+      max-width: 1068px;
+      margin: 0 auto;
+      opacity: 0.8;
+      align-items: center;
+      padding: 0 15px;
+    }
+  }
+`;
