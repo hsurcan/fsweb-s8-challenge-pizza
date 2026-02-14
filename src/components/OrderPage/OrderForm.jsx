@@ -8,7 +8,7 @@ function OrderForm({onOrderSuccess, onNavigateHome }){
     const [formData, setFormData] = useState({
         name: '',
         size: '',
-        thickness: '',
+        dough: '',
         ingredients: [],
         note: '',
         quantity: 1
@@ -44,7 +44,7 @@ function OrderForm({onOrderSuccess, onNavigateHome }){
         return (
             formData.name.trim().length >= 3 &&
             formData.size !== '' &&
-            formData.thickness !== '' &&
+            formData.dough !== '' &&
             formData.ingredients.length >= 4 
         )
     }
@@ -109,7 +109,7 @@ function OrderForm({onOrderSuccess, onNavigateHome }){
               </p>
             </div>
           </div>
-          {/*size ve thickness Seçimi Alanı*/}
+          {/*size ve dough Seçimi Alanı*/}
           <div className="form-inner-content">
             <div className="size-dough-container">
               <div className="selection-box">
@@ -134,17 +134,17 @@ function OrderForm({onOrderSuccess, onNavigateHome }){
               <div className="selection-box">
                 <h3>Hamur Seç <span className="required">*</span></h3>
                 <select
-                  name="thickness"
+                  name="dough"
                   className="dough-select-dropdown"
-                  value={formData.thickness}
+                  value={formData.dough}
                   onChange={handleInputChange}
                 >
                   <option value="">- Hamur Kalınlığı Seç -</option>
-                  {pizzaThickness.map(thickness => (
-                    <option key={thickness} value={thickness}>{thickness}</option>
+                  {pizzaThickness.map(dough => (
+                    <option key={dough} value={dough}>{dough}</option>
                   ))}
                 </select>
-                {formData.thickness === '' && <div className="field-error">Hamur kalınlığı seçmelisiniz</div>}
+                {formData.dough === '' && <div className="field-error">Hamur kalınlığı seçmelisiniz</div>}
               </div>
             </div>
 
