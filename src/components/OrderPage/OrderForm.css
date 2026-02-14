@@ -87,6 +87,11 @@
   color: #292929;
 }
 
+.rating {
+  display: flex;
+  gap: 50px;
+}
+
 /* --- Form İç Alanı --- */
 .form-inner-content {
   padding-top: 24px;
@@ -95,6 +100,7 @@
 /* --- Boyut ve Hamur --- */
 .size-dough-container {
   display: flex;
+  justify-content: space-between;
   gap: 24px;
   margin-bottom: 24px;
 }
@@ -282,6 +288,11 @@
   border: 1px solid #e0e0e0;
   border-radius: 8px;
   padding: 20px;
+}
+
+.summary-detail-row {
+  display: flex;
+  justify-content: space-between;
 }
 
 @media (max-width: 480px) {

@@ -4,7 +4,7 @@ function OrderHeader() {
   return (
     <HeaderWrapper>
       <HeaderContainer>
-        <Logo src="/src/images/iteration-1-images/logo.svg" alt="Teknolojik Yemekler" />
+        <Logo src="./images/iteration-1-images/logo.svg" alt="Teknolojik Yemekler" />
       </HeaderContainer>
     </HeaderWrapper>
   )
@@ -14,7 +14,7 @@ export default OrderHeader
 
 const HeaderWrapper = styled.header`
   width: 100%;
-  min-height: 207px;
+  min-height: 100px;
   background-color: #ce2829;
   border-bottom: 1px solid #c20608;
   display: flex;
