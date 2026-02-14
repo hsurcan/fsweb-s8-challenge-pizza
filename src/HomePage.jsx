@@ -184,6 +184,8 @@ const HeaderArea = styled.header`
 
   .header-logo {
     margin-bottom: 50px;
+    margin-top: -50px;
+    margin-left: 20px;
     img {
       width: 300px;
     }
@@ -192,6 +194,7 @@ const HeaderArea = styled.header`
     font-family: var(--font-accent);
     color: var(--color-yellow);
     font-size: 32px;
+    margin-right: 15px;
   }
   .header-title {
     color: white;
@@ -205,8 +208,10 @@ const HeaderArea = styled.header`
     padding: 12px 50px;
     border-radius: 50px;
     font-weight: 600;
+    font-size: 15px;
     cursor: pointer;
     margin-top: 30px;
+    margin-right: 20px;
   }
 `;
 
