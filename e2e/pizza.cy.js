@@ -8,7 +8,7 @@ describe('Order Form', () => {
     cy.get('input[name="name"]')
       .should('be.visible')
       .type('Test User')
-    cy.get('input[name="name"]').should('have.value', 'Test User')
+    cy.get('input[name="name"]').shoulnd('have.value', 'Test User')
   })
 
   it('allows selecting multiple ingredients', () => {
