@@ -2,7 +2,7 @@ import React, { useState } from 'react'
 import axios from 'axios'
 import './OrderForm.css'
 
-function OrderForm({onOrderSuccess, onNavigateHome }){
+function OrderForm({onOrderSuccess, onNavigateHome}){
 
 //verinin başlangıç değeri tanımlandı, her data için seçilen değer setFormData ile güncellenecek
     const [formData, setFormData] = useState({
