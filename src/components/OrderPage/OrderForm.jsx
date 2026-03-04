@@ -63,7 +63,7 @@ function OrderForm({onOrderSuccess, onNavigateHome}){
         if (!isFormValid()) return
         setSubmitError(null)
 
-        const apiKey = import.meta.env.VITE_REQRES_API_KEY || 'reqres_db158a8589274953bd9f7f9deac3a5bd'
+        const apiKey = import.meta.env.VITE_REQRES_API_KEY || ''
 
         axios
             .post('https://reqres.in/api/pizza', formData, {
